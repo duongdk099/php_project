@@ -1,5 +1,9 @@
 <?php
 session_start();
-session_destroy(); // Destroy all sessions
-header('Location: admin_login.php'); // Redirect to login page
+
+// Unset only the admin_logged_in session variable
+unset($_SESSION['admin_logged_in']);
+
+// Redirect to the desired page after logout, e.g., index.php or admin_login.php
+header('Location: admin_login.php');
 exit;
